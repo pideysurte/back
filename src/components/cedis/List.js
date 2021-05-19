@@ -188,7 +188,7 @@ class Category extends Component {
                                         const data = new FormData(document.getElementById('formulario'));
                                         fetch(Const.urlrest + "/api/cedi/update", {
                                                 method: "PUT",
-                                                headers: Const.myHeaders,
+                                                headers: Const.myHeadersPost,
                                                 body: data
                                             })
                                             .then(response => response.json())

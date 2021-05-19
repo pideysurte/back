@@ -128,32 +128,27 @@ class advertisingmarket extends Component {
         function updateForm() {
             let valUrl = validURL(document.querySelector("#updlink").value)
             let schedule = document.querySelector("#updschedule").value
-            let weight = document.querySelector("#updweight").value
-            let width = document.querySelector("#updwidth").value
-            let height = document.querySelector("#updheight").value
+
             let description = document.querySelector("#upddescription").value
             let idMarketplace = document.querySelector("#formupdate #updidmarketplaceaso").value
                 if (valUrl) {
-                    if (description.length >= 5 && schedule.length >= 4 && width.length >= 2 && height.length >= 2 && weight.length >= 3 && idMarketplace.length >= 1) {
+                    if (description.length >= 5 && schedule.length >= 4  && idMarketplace.length >= 1) {
                         const data = new FormData(document.getElementById('formularioupdate'))
+                      
                         fetch(Const.urlrest + "/api/advertisingmarket/update", {
                                 method: "PUT",
-                                headers: Const.myHeaders,
+                                headers: Const.myHeadersPost,
                                 body: data
                             })
                             .then(response => response.json())
                             .then(
                                 (result) => {
-                                    console.log(result)
-                                    alertaGeneral("Registro  Actualizado");
+                                   alertaGeneral("Registro  Actualizado");
                                     document.querySelector('.formupdate').style.display = 'none'
                                     document.getElementById("formularioupdate").reset();
                                 },
                                 (error) => {
-                                    this.setState({
-                                        isLoaded: true,
-                                        error
-                                    });
+                                    alertaGeneral("Revisar conexión");
                                 }
                             )
                     } else {
@@ -166,13 +161,10 @@ class advertisingmarket extends Component {
 
         function addForm(){
                 let valUrl = validURL(document.querySelector("#updlink").value)
-                let schedule = document.querySelector("#updschedule").value
-                let weight = document.querySelector("#updweight").value
-                let width = document.querySelector("#updwidth").value
-                let height = document.querySelector("#updheight").value
+                let schedule = document.querySelector("#updschedule").value   
                 let idMarketplace = document.querySelector("#formupdate #updidmarketplaceaso").value
                 if (valUrl) {
-                    if (schedule.length >= 4 && width.length >= 3 && height.length >= 3 && weight.length >= 3 && idMarketplace.length >= 1) {
+                    if (schedule.length >= 4  && idMarketplace.length >= 1) {
                         const data = new FormData(document.getElementById('formulario'))
                         console.log(data)
                         fetch(Const.urlrest + "/api/advertisingmarket", {

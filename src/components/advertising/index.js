@@ -122,7 +122,7 @@ class advertisingmarket extends Component {
                     
                             fetch(Const.urlrest + "/api/advertisingmarket", {
                                     method: "POST",
-                                    headers: Const.myHeaders,
+                                    headers: Const.myHeadersPost,
                                     body: data
                                 })
                                 .then(response => response.json())

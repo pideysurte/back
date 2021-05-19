@@ -115,7 +115,7 @@ componentDidMount() {
                                         const data = new FormData(document.getElementById('formulario'));
                                         fetch(Const.urlrest + "/api/cedi/", {
                                                 method: "POST",
-                                                headers: Const.myHeaders,
+                                                headers: Const.myHeadersPost,
                                                 body: data
                                             })
                                             .then(response => response.json())
