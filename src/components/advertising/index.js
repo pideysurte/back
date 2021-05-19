@@ -84,7 +84,7 @@ class advertisingmarket extends Component {
                         const data = new FormData(document.getElementById('formularioupdate'))
                         fetch(Const.urlrest + "/api/advertisingmarket/update", {
                                 method: "PUT",
-                                headers: Const.myHeaders,
+                                headers: Const.myHeadersPost,
                                 body: data
                             })
                             .then(response => response.json())
