@@ -45,10 +45,11 @@ class inputCedis extends Component {
                 <div className="col-md-4">
                     <div className="form-group">
                         <label className=" control-label">Cedi </label>
-                            <select className="form-control" id="updcedis">      
-                            {items.map(item => (
-                                <option value={item.id} >{item.name}</option>
-                            ))}                                          
+                            <select className="form-control" id="updcedis">    
+                                <option value="0" >Elegir</option>  
+                                {items.map(item => (
+                                    <option value={item.id} >{item.name}</option>
+                                ))}                                          
                             </select>                                                              
                         </div>
                 </div>

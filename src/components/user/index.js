@@ -5,6 +5,8 @@ import Sidebar from '../sidebar/Sidebar'
 import {sha256} from 'js-sha256';
 import Const from '../utils/defaultConstant'
 import AlertGeneral from '../atoms/AlertGeneral'
+import InputCedis from '../atoms/InputCedis'
+
 import Roles from './Roles'
 import {alertaGeneral,closeAlertGeneral} from '../../assets/js/GeneralScript'
 document.body.classList.add('fix-sidebar');
@@ -127,6 +129,7 @@ class useradmin extends Component {
                                         <div  className="card-title">
                                             <h4>Crear </h4>
                                         </div>
+                                        <InputCedis />
                                         <div  className="card-body">
                                             <div  className="horizontal-form">
                                                 <div  className="form-horizontal" id="formcreate" >

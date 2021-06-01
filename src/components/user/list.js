@@ -9,6 +9,7 @@ import AlertGeneral from '../atoms/AlertGeneral'
 import AlertConfirmation from '../atoms/AlertConfirm'
 import {alertaGeneral,closeAlertGeneral,alertaConfirm} from '../../assets/js/GeneralScript'
 import Roles from './Roles'
+import InputCedis from '../atoms/InputCedis'
 document.body.classList.add('fix-sidebar');
 
 class useradmin extends Component {
@@ -81,7 +82,7 @@ class useradmin extends Component {
                 }
             }
 
-            fetch(Const.urlrest + "/api/useradmin",{
+            fetch(Const.urlrest +  "/api/useradmin?idCedi=0",{
                 headers: Const.myHeaders,
             })
                 .then(response => response.json())
@@ -266,6 +267,7 @@ class useradmin extends Component {
                                             <div  className="form-horizontal" id="formcreate" >
                                                 <form id="formularioupdate">
                                                     <input type="hidden"  className="form-control" placeholder="" name="name" id="updid" required="required"  maxlength="30" />
+                                                    <InputCedis />
                                                 <div className="row p-t-20">
                                                     <div className="col-md-4">
                                                         <div  className="form-group">                                                    
